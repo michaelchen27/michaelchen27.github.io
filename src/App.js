@@ -47,9 +47,9 @@ function App() {
             <h2>About Me</h2>
           </div>
           <div className="about-content">
-            <p>Experienced Computer Engineer with a focus on native mobile app development for Android and iOS. I specialize in building high-quality mobile applications using Kotlin, Java, Swift, and Kotlin Multiplatform Mobile.</p>
-            <p>Passionate about data science, machine learning, and IoT, I enjoy working on innovative projects that combine cutting-edge technology with practical solutions. Currently contributing to educational technology as a Mobile Software Engineer at Quipper Edukasi Indonesia.</p>
-            <p>I'm seeking challenging opportunities where I can apply my mobile development expertise and contribute to dynamic teams building impactful products.</p>
+            <p>Computer Engineer specializing in native mobile app development for Android and iOS using Kotlin, Java, Swift, and Kotlin Multiplatform Mobile.</p>
+            <p>Passionate about data science, machine learning, and IoT. Currently building educational technology at Quipper Edukasi Indonesia.</p>
+            <p>Seeking opportunities to contribute mobile development expertise to dynamic teams building impactful products.</p>
           </div>
         </section>
         
@@ -102,11 +102,10 @@ function App() {
               </div>
               <div className="project-content">
                 <h3>Music Streaming App</h3>
-                <p>A full-featured music player with real-time streaming, playlists, and social features. Built with React and Node.js.</p>
+                <p>A full-featured music player with real-time streaming, playlists, and social features. Built with Android native.</p>
                 <div className="project-tags">
-                  <span className="tag">React</span>
-                  <span className="tag">Node.js</span>
-                  <span className="tag">MongoDB</span>
+                  <span className="tag">Android</span>
+                  <span className="tag">Java</span>
                 </div>
                 <div className="project-links">
                   <a href="#" className="project-link">Live Demo →</a>
