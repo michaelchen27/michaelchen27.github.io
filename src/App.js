@@ -129,28 +129,30 @@ function App() {
       </button>
 
       <header className="App-header">
-        <div className="header-content">
-          <img 
-            ref={profileImageRef}
-            src="/michael.png" 
-            alt="Profile" 
-            className="profile-image"
-            onClick={handleProfileClick}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{ cursor: 'pointer' }}
-          />
-          <h1 className="name-title">Michael Chen</h1>
-          <h2 className="role-subtitle">Full Stack Developer with Mobile App Specialization</h2>
-          <p className="tagline">Building beautiful, functional experiences on the web</p>
-          <div className="cta-buttons">
-            <a href="#experience" className="btn btn-primary">View Work</a>
-            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+        <div className="hero-content">
+          <div className="hero-profile">
+            <img 
+              ref={profileImageRef}
+              src="/michael.png" 
+              alt="Profile" 
+              className="profile-image"
+              onClick={handleProfileClick}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={{ cursor: 'pointer' }}
+            />
+          </div>
+          <div className="hero-text">
+            <h1 className="name-title">Michael Chen</h1>
+            <h2 className="role-subtitle">Full Stack Developer with Mobile App Specialization</h2>
+            <div className="cta-buttons">
+              <a href="#experience" className="btn btn-primary">Work Experience</a>
+              <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+            </div>
           </div>
         </div>
-        <div className="scroll-indicator">↓</div>
       </header>
       
       <main className="App-main">
@@ -160,9 +162,9 @@ function App() {
             <h2>About Me</h2>
           </div>
           <div className="about-content">
-            <p>Computer Engineer specializing in native mobile app development for Android and iOS using Kotlin, Java, Swift, and Kotlin Multiplatform Mobile.</p>
-            <p>Passionate about data science, machine learning, and IoT. Currently building educational technology at Quipper Edukasi Indonesia.</p>
-            <p>Seeking opportunities to contribute mobile development expertise to dynamic teams building impactful products.</p>
+            <p>Hi, I'm a Computer Engineer with <strong>4+ years of experience</strong> building native mobile apps for Android and iOS. I work mainly with <strong>Kotlin, Java, Swift</strong>, and <strong>KMM</strong>.</p>
+            <p>I really enjoy teaching others and helping them grow as developers. I'm always experimenting with new approaches and believe in building products that scale while keeping the code clean and maintainable.</p>
+            <p>I've worked on projects in edtech, healthcare, and agriculture. Always looking for opportunities to join teams building products that make a real difference.</p>
           </div>
         </section>
         
@@ -172,33 +174,49 @@ function App() {
             <h2>Skills & Technologies</h2>
           </div>
           <div className="skills-grid">
-            <div className="skill-category">
-              <div className="skill-icon">💻</div>
+            <div className="skill-category category-languages">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon">💻</div>
+                <div className="skill-icon-glow"></div>
+              </div>
               <h3>Programming Languages</h3>
-              <ul>
-                <li>Kotlin, Java</li>
-                <li>Swift, Python</li>
-                <li>PHP, Go</li>
-              </ul>
+              <div className="skill-list">
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" className="skill-tag-icon" /> Kotlin</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="skill-tag-icon" /> Java</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" className="skill-tag-icon" /> Swift</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="skill-tag-icon" /> Python</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" className="skill-tag-icon" /> PHP</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" className="skill-tag-icon" /> Go</span>
+              </div>
             </div>
-            <div className="skill-category">
-              <div className="skill-icon">📱</div>
+            <div className="skill-category category-mobile">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon">📱</div>
+                <div className="skill-icon-glow"></div>
+              </div>
               <h3>Mobile & Frameworks</h3>
-              <ul>
-                <li>Android Native (Kotlin/Java)</li>
-                <li>iOS Native (SwiftUI)</li>
-                <li>Kotlin Multiplatform Mobile</li>
-                <li>React, Laravel</li>
-              </ul>
+              <div className="skill-list">
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" className="skill-tag-icon" /> Android Native</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="iOS" className="skill-tag-icon" /> iOS Native</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="KMM" className="skill-tag-icon" /> KMM</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" className="skill-tag-icon" /> Flutter</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="skill-tag-icon" /> React</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" className="skill-tag-icon" /> Laravel</span>
+              </div>
             </div>
-            <div className="skill-category">
-              <div className="skill-icon">🛠️</div>
+            <div className="skill-category category-tools">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon">🛠️</div>
+                <div className="skill-icon-glow"></div>
+              </div>
               <h3>Tools & Platforms</h3>
-              <ul>
-                <li>Git, GitHub</li>
-                <li>Firebase, ADB</li>
-                <li>Android Studio, Xcode</li>
-              </ul>
+              <div className="skill-list">
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="skill-tag-icon" /> Git</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="skill-tag-icon" /> GitHub</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="Firebase" className="skill-tag-icon" /> Firebase</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" className="skill-tag-icon" /> Android Studio</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg" alt="Xcode" className="skill-tag-icon" /> Xcode</span>
+              </div>
             </div>
           </div>
         </section>
