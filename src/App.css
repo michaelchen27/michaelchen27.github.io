@@ -417,7 +417,23 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 20px;
+  position: relative;
+  padding-right: 40px;
+}
+
+.expand-indicator {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-primary);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-card:hover .expand-indicator {
+  transform: translateY(-50%) scale(1.2);
 }
 
 .company-logo {
@@ -451,8 +467,51 @@ section {
 }
 
 .timeline-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding-top: 0;
+}
+
+.timeline-details.show {
+  max-height: 2000px;
+  opacity: 1;
   padding-top: 15px;
   border-top: 1px solid var(--bg-tertiary);
+  margin-top: 15px;
+}
+
+.timeline-details .description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.responsibilities li {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 8px 0 8px 25px;
+  position: relative;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.responsibilities li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
 }
 
 .description-placeholder {
@@ -737,12 +796,25 @@ body.dark-mode .App-footer {
 
   .timeline-header {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding-right: 30px;
   }
 
   .company-logo {
     width: 60px;
     height: 60px;
+  }
+
+  .expand-indicator {
+    font-size: 1.2rem;
+    top: 15px;
+    right: 10px;
+    transform: none;
+  }
+
+  .timeline-card:hover .expand-indicator {
+    transform: scale(1.2);
   }
 
   .social-links {

@@ -7,6 +7,8 @@ function App() {
     return savedTheme === 'dark';
   });
 
+  const [expandedCards, setExpandedCards] = useState({});
+
   useEffect(() => {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     document.body.classList.toggle('dark-mode', darkMode);
@@ -14,6 +16,13 @@ function App() {
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
+  };
+
+  const toggleCard = (index) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
   };
 
   return (
@@ -99,22 +108,35 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className="timeline-card">
+                <div className={`timeline-card ${expandedCards[0] ? 'expanded' : ''}`} onClick={() => toggleCard(0)}>
                   <div className="timeline-header">
                     <img src="/quipper.png" alt="Quipper" className="company-logo" />
                     <div className="timeline-info">
-                      <h3>Quipper Edukasi Indonesia</h3>
-                      <p className="position">Mobile Software Engineer</p>
-                      <p className="duration">2023 - Present</p>
+                      <h3>Quipper</h3>
+                      <p className="position">Mobile Software Engineer · Full-time</p>
+                      <p className="duration">Jul 2024 - May 2026</p>
                     </div>
+                    <div className="expand-indicator">{expandedCards[0] ? '▼' : '▶'}</div>
                   </div>
-                  <div className="timeline-details">
-                    <p className="description-placeholder">Click to add job description...</p>
+                  <div className={`timeline-details ${expandedCards[0] ? 'show' : ''}`}>
+                    <p className="description">Native mobile developer for a high-scale eLearning platform, responsible for end-to-end feature delivery and maintaining a robust production environment across both Android and iOS.</p>
+                    <ul className="responsibilities">
+                      <li>Developed core mobile features using Kotlin/Java for Android and SwiftUI/UIKit for iOS, ensuring a consistent cross-platform user experience.</li>
+                      <li>Implemented shared business logic using Kotlin Multiplatform Mobile (KMM) to improve code reuse and maintain consistency between Android and iOS platforms.</li>
+                      <li>Maintained and enhanced modular internal libraries/shared SDKs to support scalable and reusable mobile architecture across teams.</li>
+                      <li>Supported and refactored legacy Android (Java) and iOS (UIKit) codebases while gradually modernizing the applications with newer technologies.</li>
+                      <li>Automated CI/CD pipelines using Fastlane and CircleCI, reducing manual deployment effort and improving release reliability.</li>
+                      <li>Built and launched a Timed Exam module with cheating detection capabilities to support academic integrity.</li>
+                      <li>Maintained a 99% crash-free rate through proactive monitoring, debugging, and issue resolution using Firebase.</li>
+                    </ul>
                     <div className="project-tags">
-                      <span className="tag">Android</span>
-                      <span className="tag">iOS</span>
                       <span className="tag">Kotlin</span>
                       <span className="tag">Swift</span>
+                      <span className="tag">KMM</span>
+                      <span className="tag">SwiftUI</span>
+                      <span className="tag">Firebase</span>
+                      <span className="tag">Fastlane</span>
+                      <span className="tag">CircleCI</span>
                     </div>
                   </div>
                 </div>
@@ -124,46 +146,137 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className="timeline-card">
-                  <div className="timeline-header">
-                    <img src="/eratani.png" alt="Eratani" className="company-logo" />
-                    <div className="timeline-info">
-                      <h3>Eratani Teknologi Nusantara</h3>
-                      <p className="position">Android Developer</p>
-                      <p className="duration">2021 - 2023</p>
-                    </div>
-                  </div>
-                  <div className="timeline-details">
-                    <p className="description-placeholder">Click to add job description...</p>
-                    <div className="project-tags">
-                      <span className="tag">Android</span>
-                      <span className="tag">Kotlin</span>
-                      <span className="tag">Java</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-card">
+                <div className={`timeline-card ${expandedCards[1] ? 'expanded' : ''}`} onClick={() => toggleCard(1)}>
                   <div className="timeline-header">
                     <img src="/lim.png" alt="Lingkar Inovasi Muda" className="company-logo" />
                     <div className="timeline-info">
                       <h3>Lingkar Inovasi Muda</h3>
-                      <p className="position">Full Stack Developer</p>
-                      <p className="duration">2020 - 2021</p>
+                      <p className="position">Software Engineer · Freelance</p>
+                      <p className="duration">May 2024 - Jul 2024</p>
                     </div>
+                    <div className="expand-indicator">{expandedCards[1] ? '▼' : '▶'}</div>
                   </div>
-                  <div className="timeline-details">
-                    <p className="description-placeholder">Click to add job description...</p>
+                  <div className={`timeline-details ${expandedCards[1] ? 'show' : ''}`}>
+                    <p className="description">Developed an installable Flutter-based Progressive Web App (PWA) for medicine reminders, integrated with Firebase Cloud Messaging (FCM) for real-time notification delivery.</p>
+                    <ul className="responsibilities">
+                      <li>Built responsive and reusable UI components in Flutter based on provided design specifications.</li>
+                      <li>Developed a Laravel + Livewire admin dashboard for managing doctor, patient, and medication schedule data.</li>
+                      <li>Designed and maintained PostgreSQL database schemas to support patient records and scheduling workflows.</li>
+                      <li>Implemented medicine reminder scheduling and push notification delivery using Firebase Cloud Messaging (FCM).</li>
+                      <li>Created a fully installable PWA experience with cross-platform browser support and offline-ready capabilities.</li>
+                      <li>Collaborated across frontend and backend development to deliver end-to-end healthcare management features.</li>
+                    </ul>
                     <div className="project-tags">
                       <span className="tag">Flutter</span>
                       <span className="tag">Laravel</span>
                       <span className="tag">Livewire</span>
                       <span className="tag">FCM</span>
+                      <span className="tag">PostgreSQL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className={`timeline-card ${expandedCards[2] ? 'expanded' : ''}`} onClick={() => toggleCard(2)}>
+                  <div className="timeline-header">
+                    <img src="/eratani.png" alt="Eratani" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Eratani</h3>
+                      <p className="position">Android Developer · Full-time</p>
+                      <p className="duration">Oct 2022 - Jun 2024</p>
+                    </div>
+                    <div className="expand-indicator">{expandedCards[2] ? '▼' : '▶'}</div>
+                  </div>
+                  <div className={`timeline-details ${expandedCards[2] ? 'show' : ''}`}>
+                    <p className="description">Developed and maintained internal Android applications used by farmers, kiosk merchants, and internal operational teams including Sales, Acquisition, Operations, Agronomists, and Supply Chain.</p>
+                    <ul className="responsibilities">
+                      <li>Built offline-first Android applications using pure Kotlin to support field operations in low- to no-signal environments.</li>
+                      <li>Developed farmer acquisition and operational data collection features to improve field reporting and workflow efficiency.</li>
+                      <li>Implemented knowledge-sharing modules enabling agronomists to upload educational content accessible to farmers in remote areas.</li>
+                      <li>Designed and developed supply chain features including cart-based workflows and Budget Planning management.</li>
+                      <li>Optimized local data storage and synchronization mechanisms to ensure reliable application performance under unstable network conditions.</li>
+                      <li>Collaborated closely with cross-functional operational teams to translate field requirements into scalable mobile solutions.</li>
+                    </ul>
+                    <div className="project-tags">
+                      <span className="tag">Kotlin</span>
+                      <span className="tag">Flow</span>
+                      <span className="tag">MVVM</span>
+                      <span className="tag">Offline-First</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className={`timeline-card ${expandedCards[3] ? 'expanded' : ''}`} onClick={() => toggleCard(3)}>
+                  <div className="timeline-header">
+                    <img src="/barangbaku.png" alt="BarangBaku" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Barangbaku.com</h3>
+                      <p className="position">Software Engineer · Internship</p>
+                      <p className="duration">May 2021 - Oct 2021</p>
+                    </div>
+                    <div className="expand-indicator">{expandedCards[3] ? '▼' : '▶'}</div>
+                  </div>
+                  <div className={`timeline-details ${expandedCards[3] ? 'show' : ''}`}>
+                    <p className="description">Developed a mobile marketplace application for Android and iOS called BarangBaku Marketplace, enabling users to buy and sell raw and semi-raw goods.</p>
+                    <ul className="responsibilities">
+                      <li>Contributed to building the startup's MVP e-commerce platform from the ground up for Android and iOS.</li>
+                      <li>Implemented Clean Architecture principles to improve scalability, maintainability, and code organization.</li>
+                      <li>Developed and released the Android application to the Google Play Store.</li>
+                      <li>Built the iOS MVP using Kotlin Multiplatform Mobile (KMM) and SwiftUI to share business logic across platforms.</li>
+                      <li>Developed backend business logic and API services using Golang to support marketplace operations and mobile integrations.</li>
+                      <li>Collaborated closely with the startup team to rapidly iterate and deliver core marketplace features within MVP timelines.</li>
+                    </ul>
+                    <div className="project-tags">
+                      <span className="tag">Kotlin</span>
+                      <span className="tag">KMM</span>
+                      <span className="tag">SwiftUI</span>
+                      <span className="tag">Golang</span>
+                      <span className="tag">Clean Architecture</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className={`timeline-card ${expandedCards[4] ? 'expanded' : ''}`} onClick={() => toggleCard(4)}>
+                  <div className="timeline-header">
+                    <img src="/aces.jpeg" alt="ACES UMN" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Association of Computer Engineering Students</h3>
+                      <p className="position">Academic Tutor · Contract</p>
+                      <p className="duration">Dec 2019 - Dec 2020</p>
+                    </div>
+                    <div className="expand-indicator">{expandedCards[4] ? '▼' : '▶'}</div>
+                  </div>
+                  <div className={`timeline-details ${expandedCards[4] ? 'show' : ''}`}>
+                    <p className="description">Held weekly tutoring sessions for fellow students based on academic and technical learning requests.</p>
+                    <ul className="responsibilities">
+                      <li>Taught Electronics and Robotics fundamentals, including basic circuit design and embedded systems concepts.</li>
+                      <li>Mentored students on Git and GitHub workflows, including version control, collaboration, and repository management.</li>
+                      <li>Introduced Object-Oriented Programming (OOP) fundamentals and software development best practices.</li>
+                      <li>Assisted students in understanding Calculus concepts and solving mathematical problems through guided practice sessions.</li>
+                      <li>Taught Cisco and Huawei networking fundamentals, including basic network engineering, routing, switching, and infrastructure concepts.</li>
+                      <li>Facilitated peer learning and technical discussions to help students strengthen problem-solving and programming skills.</li>
+                    </ul>
+                    <div className="project-tags">
+                      <span className="tag">Teaching</span>
+                      <span className="tag">Electronics</span>
+                      <span className="tag">Robotics</span>
+                      <span className="tag">Git</span>
+                      <span className="tag">OOP</span>
+                      <span className="tag">Networking</span>
                     </div>
                   </div>
                 </div>
@@ -192,23 +305,6 @@ function App() {
                 <div className="project-links">
                   <a href="#" className="project-link">Live Demo →</a>
                   <a href="#" className="project-link">GitHub →</a>
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                <img src="/barangbaku.png" alt="BarangBaku Marketplace" />
-              </div>
-              <div className="project-content">
-                <h3>BarangBaku Marketplace</h3>
-                <p>Mobile application for Android and iOS enabling users to purchase and sell raw/semi-raw goods with seamless marketplace features.</p>
-                <div className="project-tags">
-                  <span className="tag">Android</span>
-                  <span className="tag">iOS</span>
-                  <span className="tag">Mobile</span>
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link">View Details →</a>
                 </div>
               </div>
             </div>
