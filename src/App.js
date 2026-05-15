@@ -134,7 +134,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">�</div>
+                <img src="/lim.png" alt="Lingkar Inovasi Muda Medicine Reminder PWA" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Lingkar Inovasi Muda</span>
@@ -279,13 +279,9 @@ function App() {
                 <span className="social-icon">💼</span>
                 <span>LinkedIn</span>
               </a>
-              <a href="mailto:hello@example.com" className="social-link">
+              <a href="mailto:michael.chen2701@gmail.com" className="social-link">
                 <span className="social-icon">✉️</span>
                 <span>Email</span>
-              </a>
-              <a href="https://twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
-                <span className="social-icon">🐦</span>
-                <span>Twitter</span>
               </a>
             </div>
           </div>
