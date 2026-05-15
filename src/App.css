@@ -545,6 +545,10 @@ section {
   margin-top: auto;
 }
 
+body.dark-mode .App-footer {
+  color: #212842;
+}
+
 .App-footer p {
   margin: 0;
   opacity: 0.8;

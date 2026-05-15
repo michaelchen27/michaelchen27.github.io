@@ -289,7 +289,7 @@ function App() {
       </main>
       
       <footer className="App-footer">
-        <p>© 2026 Michael Chen. Crafted with ❤️ and React</p>
+        <p>© 2026 Michael Chen. All rights reserved.</p>
       </footer>
     </div>
   );
