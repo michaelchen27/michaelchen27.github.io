@@ -7,7 +7,7 @@
 /coverage
 
 # Production
-/build
+# /build - commented out to allow committing built files
 
 # Misc
 .DS_Store
