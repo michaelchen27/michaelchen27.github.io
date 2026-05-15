@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return savedTheme === 'dark';
   });
 
   useEffect(() => {
@@ -280,7 +280,7 @@ function App() {
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:michael.chen2701@gmail.com" className="social-link">
-                <span className="social-icon">✉️</span>
+                <img src="/gmail-logo.svg" alt="Gmail" className="social-logo" />
                 <span>Email</span>
               </a>
             </div>
@@ -289,7 +289,7 @@ function App() {
       </main>
       
       <footer className="App-footer">
-        <p>© 2024 Michael Chen. Crafted with ❤️ and React</p>
+        <p>© 2026 Michael Chen. Crafted with ❤️ and React</p>
       </footer>
     </div>
   );
