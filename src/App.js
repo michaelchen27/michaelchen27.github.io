@@ -208,7 +208,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">🗑️</div>
+                <img src="/trashcan.jpg" alt="Smart Trash Can" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Personal Project</span>
@@ -273,11 +273,11 @@ function App() {
             <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
             <div className="social-links">
               <a href="https://github.com/michaelchen27" className="social-link" target="_blank" rel="noopener noreferrer">
-                <span className="social-icon">⚡</span>
+                <img src="/github-logo.svg" alt="GitHub" className="social-logo" />
                 <span>GitHub</span>
               </a>
               <a href="https://linkedin.com" className="social-link" target="_blank" rel="noopener noreferrer">
-                <span className="social-icon">💼</span>
+                <img src="/linkedin-logo.svg" alt="LinkedIn" className="social-logo" />
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:michael.chen2701@gmail.com" className="social-link">

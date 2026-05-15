@@ -522,6 +522,17 @@ section {
   font-size: 2rem;
 }
 
+.social-logo {
+  width: 32px;
+  height: 32px;
+  color: #e6d6c4;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-logo {
+  transform: scale(1.1);
+}
+
 .social-link span:last-child {
   font-weight: 600;
   font-size: 1rem;
