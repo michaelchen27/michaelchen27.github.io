@@ -90,15 +90,97 @@ function App() {
           </div>
         </section>
         
+        <section className="experience" id="experience">
+          <div className="section-header">
+            <span className="section-label">Career</span>
+            <h2>Work Experience</h2>
+          </div>
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-card">
+                  <div className="timeline-header">
+                    <img src="/quipper.png" alt="Quipper" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Quipper Edukasi Indonesia</h3>
+                      <p className="position">Mobile Software Engineer</p>
+                      <p className="duration">2023 - Present</p>
+                    </div>
+                  </div>
+                  <div className="timeline-details">
+                    <p className="description-placeholder">Click to add job description...</p>
+                    <div className="project-tags">
+                      <span className="tag">Android</span>
+                      <span className="tag">iOS</span>
+                      <span className="tag">Kotlin</span>
+                      <span className="tag">Swift</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-card">
+                  <div className="timeline-header">
+                    <img src="/eratani.png" alt="Eratani" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Eratani Teknologi Nusantara</h3>
+                      <p className="position">Android Developer</p>
+                      <p className="duration">2021 - 2023</p>
+                    </div>
+                  </div>
+                  <div className="timeline-details">
+                    <p className="description-placeholder">Click to add job description...</p>
+                    <div className="project-tags">
+                      <span className="tag">Android</span>
+                      <span className="tag">Kotlin</span>
+                      <span className="tag">Java</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-card">
+                  <div className="timeline-header">
+                    <img src="/lim.png" alt="Lingkar Inovasi Muda" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Lingkar Inovasi Muda</h3>
+                      <p className="position">Full Stack Developer</p>
+                      <p className="duration">2020 - 2021</p>
+                    </div>
+                  </div>
+                  <div className="timeline-details">
+                    <p className="description-placeholder">Click to add job description...</p>
+                    <div className="project-tags">
+                      <span className="tag">Flutter</span>
+                      <span className="tag">Laravel</span>
+                      <span className="tag">Livewire</span>
+                      <span className="tag">FCM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="projects" id="projects">
           <div className="section-header">
-            <span className="section-label">Work</span>
-            <h2>Featured Projects</h2>
+            <span className="section-label">Portfolio</span>
+            <h2>Personal Projects</h2>
           </div>
           <div className="project-grid">
             <div className="project-card">
               <div className="project-image">
-                <img src="/music-player.png" alt="Music Player Project" />
+                <img src="/music-player.png" alt="Music Streaming App" />
               </div>
               <div className="project-content">
                 <h3>Music Streaming App</h3>
@@ -115,66 +197,9 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <img src="/quipper.png" alt="Quipper Student Learning System" />
-              </div>
-              <div className="project-content">
-                <span className="company-badge">Quipper Edukasi Indonesia</span>
-                <h3>Student Learning System</h3>
-                <p>Develop and maintain features of the Android and iOS Student Learning System, providing educational content and tools to students.</p>
-                <div className="project-tags">
-                  <span className="tag">Android</span>
-                  <span className="tag">iOS</span>
-                  <span className="tag">Kotlin</span>
-                  <span className="tag">Swift</span>
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link">View Details →</a>
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                <img src="/lim.png" alt="Lingkar Inovasi Muda Medicine Reminder PWA" />
-              </div>
-              <div className="project-content">
-                <span className="company-badge">Lingkar Inovasi Muda</span>
-                <h3>Medicine Reminder PWA</h3>
-                <p>Flutter-based PWA for medicine reminders using FCM, with a Laravel + Livewire admin dashboard for managing patient schedules.</p>
-                <div className="project-tags">
-                  <span className="tag">Flutter</span>
-                  <span className="tag">Laravel</span>
-                  <span className="tag">Livewire</span>
-                  <span className="tag">FCM</span>
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link">View Details →</a>
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                <img src="/eratani.png" alt="Eratani Internal Android Applications" />
-              </div>
-              <div className="project-content">
-                <span className="company-badge">Eratani Teknologi Nusantara</span>
-                <h3>Internal Android Applications</h3>
-                <p>Develop and maintain internal Android applications for farmers, kiosk merchants, and internal teams (Sales, Acquisition, Operation, Supply Chain).</p>
-                <div className="project-tags">
-                  <span className="tag">Android</span>
-                  <span className="tag">Kotlin</span>
-                  <span className="tag">Java</span>
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link">View Details →</a>
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
                 <img src="/barangbaku.png" alt="BarangBaku Marketplace" />
               </div>
               <div className="project-content">
-                <span className="company-badge">Barangbaku</span>
                 <h3>BarangBaku Marketplace</h3>
                 <p>Mobile application for Android and iOS enabling users to purchase and sell raw/semi-raw goods with seamless marketplace features.</p>
                 <div className="project-tags">
