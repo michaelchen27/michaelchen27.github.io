@@ -172,7 +172,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">�🛒</div>
+                <img src="/barangbaku.png" alt="BarangBaku Marketplace" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Barangbaku</span>
@@ -190,7 +190,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">🤖</div>
+                <img src="/fl.png" alt="Federated Learning Scam Classifier" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Open Source</span>
