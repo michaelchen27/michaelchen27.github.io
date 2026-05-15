@@ -227,7 +227,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">📦</div>
+                <img src="/inventory_tracker.jpg" alt="Inventory Tracker" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Personal Project</span>
@@ -245,7 +245,7 @@ function App() {
             </div>
             <div className="project-card">
               <div className="project-image">
-                <div className="placeholder-image">💬</div>
+                <img src="/useit.png" alt="UseIt IT Support" />
               </div>
               <div className="project-content">
                 <span className="company-badge">Personal Project</span>
