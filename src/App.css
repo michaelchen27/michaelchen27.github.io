@@ -127,19 +127,14 @@ html {
 }
 
 .profile-image {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 25px;
-  border: 5px solid #e6d6c4;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
+  border: 4px solid var(--accent-primary);
   transition: transform 0.3s ease;
   animation: fadeIn 1s ease-out 0.2s both;
-}
-
-.profile-image:hover {
-  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -415,7 +410,7 @@ section {
 
 .timeline-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   position: relative;
   padding-right: 40px;
@@ -427,13 +422,15 @@ section {
   top: 50%;
   transform: translateY(-50%);
   color: var(--accent-primary);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .timeline-card:hover .expand-indicator {
-  transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.3);
 }
 
 .company-logo {
@@ -444,6 +441,11 @@ section {
   background: white;
   padding: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-info {
+  text-align: left;
+  flex: 1;
 }
 
 .timeline-info h3 {
@@ -475,11 +477,34 @@ section {
 }
 
 .timeline-details.show {
-  max-height: 2000px;
+  max-height: 3000px;
   opacity: 1;
   padding-top: 15px;
   border-top: 1px solid var(--bg-tertiary);
   margin-top: 15px;
+}
+
+.timeline-cover {
+  width: calc(100% + 50px);
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px 15px 0 0;
+  margin: -25px -25px 20px -25px;
+}
+
+.timeline-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.timeline-card:hover .timeline-cover img {
+  transform: scale(1.05);
 }
 
 .timeline-details .description {
@@ -795,10 +820,14 @@ body.dark-mode .App-footer {
   }
 
   .timeline-header {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
     text-align: center;
-    padding-right: 30px;
+    padding-right: 30px !important;
+  }
+
+  .timeline-info {
+    text-align: center !important;
   }
 
   .company-logo {
@@ -807,14 +836,15 @@ body.dark-mode .App-footer {
   }
 
   .expand-indicator {
-    font-size: 1.2rem;
-    top: 15px;
-    right: 10px;
-    transform: none;
+    font-size: 1.3rem;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px !important;
   }
 
   .timeline-card:hover .expand-indicator {
-    transform: scale(1.2);
+    transform: translateY(-50%) scale(1.2);
   }
 
   .social-links {

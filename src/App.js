@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
@@ -8,11 +8,51 @@ function App() {
   });
 
   const [expandedCards, setExpandedCards] = useState({});
+  const [profileClickCount, setProfileClickCount] = useState(0);
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [isHolding, setIsHolding] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const rotationRef = useRef(0);
+  const animationFrameRef = useRef(null);
+  const profileImageRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
     document.body.classList.toggle('dark-mode', darkMode);
   }, [darkMode]);
+
+  useEffect(() => {
+    if (!isSpinning) {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      // Reset transform when not spinning
+      if (profileImageRef.current) {
+        profileImageRef.current.style.transform = isHovering ? 'scale(1.05)' : 'scale(1)';
+      }
+      return;
+    }
+
+    const animate = () => {
+      const speed = isHolding ? 10 : 2; // degrees per frame
+      rotationRef.current = (rotationRef.current + speed) % 360;
+      
+      if (profileImageRef.current) {
+        const scale = isHovering ? 1.05 : 1;
+        profileImageRef.current.style.transform = `rotate(${rotationRef.current}deg) scale(${scale})`;
+      }
+      
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [isSpinning, isHolding, isHovering]);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
@@ -23,6 +63,34 @@ function App() {
       ...prev,
       [index]: !prev[index]
     }));
+  };
+
+  const handleProfileClick = () => {
+    const newCount = profileClickCount + 1;
+    setProfileClickCount(newCount);
+    
+    if (newCount === 7) {
+      setIsSpinning(true);
+    }
+  };
+
+  const handleMouseDown = () => {
+    if (isSpinning) {
+      setIsHolding(true);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsHolding(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHolding(false);
+    setIsHovering(false);
   };
 
   return (
@@ -37,12 +105,23 @@ function App() {
 
       <header className="App-header">
         <div className="header-content">
-          <img src="/michael.png" alt="Profile" className="profile-image" />
+          <img 
+            ref={profileImageRef}
+            src="/michael.png" 
+            alt="Profile" 
+            className="profile-image"
+            onClick={handleProfileClick}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{ cursor: 'pointer' }}
+          />
           <h1 className="name-title">Michael Chen</h1>
           <h2 className="role-subtitle">Full Stack Developer with Mobile App Specialization</h2>
           <p className="tagline">Building beautiful, functional experiences on the web</p>
           <div className="cta-buttons">
-            <a href="#projects" className="btn btn-primary">View Work</a>
+            <a href="#experience" className="btn btn-primary">View Work</a>
             <a href="#contact" className="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
@@ -109,14 +188,19 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className={`timeline-card ${expandedCards[0] ? 'expanded' : ''}`} onClick={() => toggleCard(0)}>
+                  {expandedCards[0] && (
+                    <div className="timeline-cover">
+                      <img src="/quipper_cover.png" alt="Quipper" />
+                    </div>
+                  )}
                   <div className="timeline-header">
-                    <img src="/quipper.png" alt="Quipper" className="company-logo" />
+                    <img src="/quipper.jpeg" alt="Quipper" className="company-logo" />
                     <div className="timeline-info">
                       <h3>Quipper</h3>
-                      <p className="position">Mobile Software Engineer · Full-time</p>
+                      <p className="position">Mobile Software Engineer<br/>Full-time</p>
                       <p className="duration">Jul 2024 - May 2026</p>
                     </div>
-                    <div className="expand-indicator">{expandedCards[0] ? '▼' : '▶'}</div>
+                    {!expandedCards[0] && <div className="expand-indicator">⌄</div>}
                   </div>
                   <div className={`timeline-details ${expandedCards[0] ? 'show' : ''}`}>
                     <p className="description">Native mobile developer for a high-scale eLearning platform, responsible for end-to-end feature delivery and maintaining a robust production environment across both Android and iOS.</p>
@@ -147,14 +231,19 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className={`timeline-card ${expandedCards[1] ? 'expanded' : ''}`} onClick={() => toggleCard(1)}>
+                  {expandedCards[1] && (
+                    <div className="timeline-cover">
+                      <img src="/lim_cover.png" alt="Lingkar Inovasi Muda" />
+                    </div>
+                  )}
                   <div className="timeline-header">
-                    <img src="/lim.png" alt="Lingkar Inovasi Muda" className="company-logo" />
+                    <img src="/lim.jpeg" alt="Lingkar Inovasi Muda" className="company-logo" />
                     <div className="timeline-info">
                       <h3>Lingkar Inovasi Muda</h3>
-                      <p className="position">Software Engineer · Freelance</p>
+                      <p className="position">Software Engineer<br/>Freelance</p>
                       <p className="duration">May 2024 - Jul 2024</p>
                     </div>
-                    <div className="expand-indicator">{expandedCards[1] ? '▼' : '▶'}</div>
+                    {!expandedCards[1] && <div className="expand-indicator">⌄</div>}
                   </div>
                   <div className={`timeline-details ${expandedCards[1] ? 'show' : ''}`}>
                     <p className="description">Developed an installable Flutter-based Progressive Web App (PWA) for medicine reminders, integrated with Firebase Cloud Messaging (FCM) for real-time notification delivery.</p>
@@ -182,14 +271,19 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className={`timeline-card ${expandedCards[2] ? 'expanded' : ''}`} onClick={() => toggleCard(2)}>
+                  {expandedCards[2] && (
+                    <div className="timeline-cover">
+                      <img src="/eratani_cover.png" alt="Eratani" />
+                    </div>
+                  )}
                   <div className="timeline-header">
-                    <img src="/eratani.png" alt="Eratani" className="company-logo" />
+                    <img src="/eratani.jpeg" alt="Eratani" className="company-logo" />
                     <div className="timeline-info">
                       <h3>Eratani</h3>
-                      <p className="position">Android Developer · Full-time</p>
+                      <p className="position">Android Developer<br/>Full-time</p>
                       <p className="duration">Oct 2022 - Jun 2024</p>
                     </div>
-                    <div className="expand-indicator">{expandedCards[2] ? '▼' : '▶'}</div>
+                    {!expandedCards[2] && <div className="expand-indicator">⌄</div>}
                   </div>
                   <div className={`timeline-details ${expandedCards[2] ? 'show' : ''}`}>
                     <p className="description">Developed and maintained internal Android applications used by farmers, kiosk merchants, and internal operational teams including Sales, Acquisition, Operations, Agronomists, and Supply Chain.</p>
@@ -216,14 +310,19 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className={`timeline-card ${expandedCards[3] ? 'expanded' : ''}`} onClick={() => toggleCard(3)}>
+                  {expandedCards[3] && (
+                    <div className="timeline-cover">
+                      <img src="/barangbaku_cover.png" alt="BarangBaku" />
+                    </div>
+                  )}
                   <div className="timeline-header">
-                    <img src="/barangbaku.png" alt="BarangBaku" className="company-logo" />
+                    <img src="/barangbaku.jpeg" alt="BarangBaku" className="company-logo" />
                     <div className="timeline-info">
-                      <h3>Barangbaku.com</h3>
-                      <p className="position">Software Engineer · Internship</p>
+                      <h3>Barangbaku</h3>
+                      <p className="position">Software Engineer<br/>Internship</p>
                       <p className="duration">May 2021 - Oct 2021</p>
                     </div>
-                    <div className="expand-indicator">{expandedCards[3] ? '▼' : '▶'}</div>
+                    {!expandedCards[3] && <div className="expand-indicator">⌄</div>}
                   </div>
                   <div className={`timeline-details ${expandedCards[3] ? 'show' : ''}`}>
                     <p className="description">Developed a mobile marketplace application for Android and iOS called BarangBaku Marketplace, enabling users to buy and sell raw and semi-raw goods.</p>
@@ -251,14 +350,19 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className={`timeline-card ${expandedCards[4] ? 'expanded' : ''}`} onClick={() => toggleCard(4)}>
+                  {expandedCards[4] && (
+                    <div className="timeline-cover">
+                      <img src="/aces_cover.jpg" alt="ACES UMN" />
+                    </div>
+                  )}
                   <div className="timeline-header">
                     <img src="/aces.jpeg" alt="ACES UMN" className="company-logo" />
                     <div className="timeline-info">
                       <h3>Association of Computer Engineering Students</h3>
-                      <p className="position">Academic Tutor · Contract</p>
+                      <p className="position">Academic Tutor<br/>Contract</p>
                       <p className="duration">Dec 2019 - Dec 2020</p>
                     </div>
-                    <div className="expand-indicator">{expandedCards[4] ? '▼' : '▶'}</div>
+                    {!expandedCards[4] && <div className="expand-indicator">⌄</div>}
                   </div>
                   <div className={`timeline-details ${expandedCards[4] ? 'show' : ''}`}>
                     <p className="description">Held weekly tutoring sessions for fellow students based on academic and technical learning requests.</p>
