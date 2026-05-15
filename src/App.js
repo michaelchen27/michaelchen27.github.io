@@ -47,8 +47,9 @@ function App() {
             <h2>About Me</h2>
           </div>
           <div className="about-content">
-            <p>Hello! I'm a passionate developer who loves creating elegant solutions to complex problems. With expertise in modern web technologies, I bring ideas to life through clean code and thoughtful design.</p>
-            <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge with the developer community.</p>
+            <p>Experienced Computer Engineer with a focus on native mobile app development for Android and iOS. I specialize in building high-quality mobile applications using Kotlin, Java, Swift, and Kotlin Multiplatform Mobile.</p>
+            <p>Passionate about data science, machine learning, and IoT, I enjoy working on innovative projects that combine cutting-edge technology with practical solutions. Currently contributing to educational technology as a Mobile Software Engineer at Quipper Edukasi Indonesia.</p>
+            <p>I'm seeking challenging opportunities where I can apply my mobile development expertise and contribute to dynamic teams building impactful products.</p>
           </div>
         </section>
         
