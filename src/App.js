@@ -93,6 +93,31 @@ function App() {
     setIsHovering(false);
   };
 
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const email = 'michael.chen2701@gmail.com';
+    
+    // Try to open mail client
+    const mailtoLink = `mailto:${email}`;
+    window.location.href = mailtoLink;
+    
+    // Copy to clipboard as fallback
+    navigator.clipboard.writeText(email).then(() => {
+      alert('Email copied to clipboard: ' + email);
+    }).catch(() => {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = email;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      alert('Email copied to clipboard: ' + email);
+    });
+  };
+
   return (
     <div className="App">
       <button 
@@ -496,6 +521,10 @@ function App() {
           <div className="contact-content">
             <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
             <div className="social-links">
+              <a href="http://discord.com/users/313497257435463680" className="social-link" target="_blank" rel="noopener noreferrer">
+                <img src="/discord-logo.svg" alt="Discord" className="social-logo" />
+                <span>Discord</span>
+              </a>
               <a href="https://github.com/michaelchen27" className="social-link" target="_blank" rel="noopener noreferrer">
                 <img src="/github-logo.svg" alt="GitHub" className="social-logo" />
                 <span>GitHub</span>
@@ -504,7 +533,7 @@ function App() {
                 <img src="/linkedin-logo.svg" alt="LinkedIn" className="social-logo" />
                 <span>LinkedIn</span>
               </a>
-              <a href="mailto:michael.chen2701@gmail.com" className="social-link">
+              <a href="mailto:michael.chen2701@gmail.com" className="social-link" onClick={handleEmailClick}>
                 <img src="/gmail-logo.svg" alt="Gmail" className="social-logo" />
                 <span>Email</span>
               </a>
