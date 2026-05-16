@@ -1057,11 +1057,17 @@ body.dark-mode .App-footer {
 
   /* Timeline mobile responsive */
   .timeline::before {
-    left: 20px;
+    left: 30px;
+    transform: translateX(-50%);
   }
 
   .timeline-dot {
-    left: 20px;
+    left: 30px;
+    transform: translateX(-50%) !important;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    transform: translateX(-50%) scale(1.3) !important;
   }
 
   .timeline-content {
@@ -1075,14 +1081,14 @@ body.dark-mode .App-footer {
   }
 
   .timeline-header {
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
+    flex-direction: row !important;
+    align-items: flex-start;
+    text-align: left;
     padding-right: 30px !important;
   }
 
   .timeline-info {
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .company-logo {
