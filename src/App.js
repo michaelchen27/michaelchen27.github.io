@@ -440,18 +440,18 @@ function App() {
           <div className="project-grid">
             <div className="project-card">
               <div className="project-image">
-                <img src="/music-player.png" alt="Music Streaming App" />
+                <img src="/music-player.png" alt="Local Music Player" />
               </div>
               <div className="project-content">
-                <h3>Music Streaming App</h3>
-                <p>A full-featured music player with real-time streaming, playlists, and social features. Built with Android native.</p>
+                <span className="company-badge">Personal Project</span>
+                <h3>Local Music Player</h3>
+                <p>A full-featured local music player with playlists and playback controls. Built with Android native.</p>
                 <div className="project-tags">
                   <span className="tag">Android</span>
                   <span className="tag">Java</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">Live Demo →</a>
-                  <a href="#" className="project-link">GitHub →</a>
+                  <a href="https://github.com/michaelchen27/scam-classifier" className="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
                 </div>
               </div>
             </div>
@@ -460,7 +460,7 @@ function App() {
                 <img src="/fl.png" alt="Federated Learning Scam Classifier" />
               </div>
               <div className="project-content">
-                <span className="company-badge">Open Source</span>
+                <span className="company-badge">Research</span>
                 <h3>Federated Learning Scam Classifier</h3>
                 <p>Machine learning model trained in a federated fashion for binary classification between scam and non-scam messages using PySyft and PyTorch.</p>
                 <div className="project-tags">
@@ -469,7 +469,8 @@ function App() {
                   <span className="tag">ML</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">GitHub →</a>
+                  <a href="https://github.com/michaelchen27/scam-classifier" className="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+                  <a href="https://www.researchgate.net/publication/369696587_Federated_learning_for_scam_classification_in_small_Indonesian_language_dataset_an_initial_study" className="project-link" target="_blank" rel="noopener noreferrer">Paper →</a>
                 </div>
               </div>
             </div>
@@ -488,7 +489,7 @@ function App() {
                   <span className="tag">Raspberry Pi</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">View Details →</a>
+                  <a href="https://github.com/michaelchen27/trash-separator-api" className="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
                 </div>
               </div>
             </div>
@@ -506,7 +507,7 @@ function App() {
                   <span className="tag">RFID</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">GitHub →</a>
+                  <a href="https://github.com/michaelchen27/InventorySystem" className="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
                 </div>
               </div>
             </div>
@@ -524,7 +525,7 @@ function App() {
                   <span className="tag">Firebase</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">GitHub →</a>
+                  <a href="https://github.com/michaelchen27/UseIt" className="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
                 </div>
               </div>
             </div>
