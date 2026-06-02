@@ -628,7 +628,7 @@ function App() {
                 <img src="/github-logo.svg" alt="GitHub" className="social-logo" />
                 <span>GitHub</span>
               </a>
-              <a href="https://linkedin.com" className="social-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/michen27/" className="social-link" target="_blank" rel="noopener noreferrer">
                 <img src="/linkedin-logo.svg" alt="LinkedIn" className="social-logo" />
                 <span>LinkedIn</span>
               </a>
