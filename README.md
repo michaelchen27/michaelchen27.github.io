@@ -22,9 +22,13 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+### `npm run publish`
+
+Builds the app and copies the production output to the **repository root** (`index.html`, `static/`, etc.). Use this before pushing to GitHub — the live site is served from the root of `master`, not from the `build/` folder.
+
 ### `npm run deploy`
 
-Builds and deploys the app to GitHub Pages.
+Builds and pushes to a separate `gh-pages` branch (not used for this repo’s current GitHub Pages setup).
 
 ## Setup
 
@@ -43,9 +47,12 @@ Builds and deploys the app to GitHub Pages.
    npm run build
    ```
 
-4. Deploy to GitHub Pages:
+4. Publish to GitHub Pages (copy build output to repo root, then commit and push):
    ```bash
-   npm run deploy
+   npm run publish
+   git add index.html asset-manifest.json static/
+   git commit -m "Publish production build"
+   git push
    ```
 
 ## Customization

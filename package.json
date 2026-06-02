@@ -17,7 +17,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "publish": "npm run build && cp build/index.html build/asset-manifest.json . && cp build/static/js/main.*.js* static/js/ && cp build/static/css/main.*.css* static/css/"
   },
   "eslintConfig": {
     "extends": [
