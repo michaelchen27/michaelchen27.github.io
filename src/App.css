@@ -655,6 +655,21 @@ section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.company-logo-placeholder {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--accent-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
 .timeline-info {
   text-align: left;
   flex: 1;

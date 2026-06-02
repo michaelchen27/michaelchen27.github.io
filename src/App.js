@@ -238,6 +238,44 @@ function App() {
                 <div className={`timeline-card ${expandedCards[0] ? 'expanded' : ''}`} onClick={() => toggleCard(0)}>
                   {expandedCards[0] && (
                     <div className="timeline-cover">
+                      <img src="/travolks_cover.jpg" alt="Travolks" />
+                    </div>
+                  )}
+                  <div className="timeline-header">
+                  <img src="/travolks.png" alt="Travolks" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Travolks</h3>
+                      <p className="position">Contract</p>
+                      <p className="duration">May 2026 - Jun 2026</p>
+                    </div>
+                    {!expandedCards[0] && <div className="expand-indicator">⌄</div>}
+                  </div>
+                  <div className={`timeline-details ${expandedCards[0] ? 'show' : ''}`}>
+                    <p className="description">Full-stack contract work for Travolks, a Bali travel brand: QR scan attribution at partner villas, activity discovery, and Megatix checkout.</p>
+                    <ul className="responsibilities">
+                      <li>Built backend logic to tie each QR scan to a villa and track how often codes are scanned at each property.</li>
+                      <li>Stored scan events and usage data in Supabase for reporting and analytics.</li>
+                      <li>Added an activity catalog so guests can browse current Travolks offerings before booking.</li>
+                      <li>Integrated Megatix for ticket checkout and payment at the end of the flow.</li>
+                      <li>Developed the web app in Next.js with TypeScript and deployed it on Vercel.</li>
+                    </ul>
+                    <div className="project-tags">
+                      <span className="tag">Next.js</span>
+                      <span className="tag">TypeScript</span>
+                      <span className="tag">Supabase</span>
+                      <span className="tag">Vercel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className={`timeline-card ${expandedCards[1] ? 'expanded' : ''}`} onClick={() => toggleCard(1)}>
+                  {expandedCards[1] && (
+                    <div className="timeline-cover">
                       <img src="/quipper_cover.png" alt="Quipper" />
                     </div>
                   )}
@@ -248,9 +286,9 @@ function App() {
                       <p className="position">Mobile Software Engineer<br/>Full-time</p>
                       <p className="duration">Jul 2024 - May 2026</p>
                     </div>
-                    {!expandedCards[0] && <div className="expand-indicator">⌄</div>}
+                    {!expandedCards[1] && <div className="expand-indicator">⌄</div>}
                   </div>
-                  <div className={`timeline-details ${expandedCards[0] ? 'show' : ''}`}>
+                  <div className={`timeline-details ${expandedCards[1] ? 'show' : ''}`}>
                     <p className="description">Native mobile developer for a high-scale eLearning platform, responsible for end-to-end feature delivery and maintaining a robust production environment across both Android and iOS.</p>
                     <ul className="responsibilities">
                       <li>Developed core mobile features using Kotlin/Java for Android and SwiftUI/UIKit for iOS, ensuring a consistent cross-platform user experience.</li>
@@ -278,8 +316,45 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className={`timeline-card ${expandedCards[1] ? 'expanded' : ''}`} onClick={() => toggleCard(1)}>
-                  {expandedCards[1] && (
+                <div className={`timeline-card ${expandedCards[2] ? 'expanded' : ''}`} onClick={() => toggleCard(2)}>
+                  {expandedCards[2] && (
+                    <div className="timeline-cover">
+                      <img src="/perform72_cover.jpeg" alt="Perform72" />
+                    </div>
+                  )}
+                  <div className="timeline-header">
+                  <img src="/perform72.png" alt="Perform72" className="company-logo" />
+                    <div className="timeline-info">
+                      <h3>Perform72</h3>
+                      <p className="position">Full-Stack Engineer<br/>Freelance</p>
+                      <p className="duration">Jun 2025 - Sep 2025</p>
+                    </div>
+                    {!expandedCards[2] && <div className="expand-indicator">⌄</div>}
+                  </div>
+                  <div className={`timeline-details ${expandedCards[2] ? 'show' : ''}`}>
+                    <p className="description">Developed a full-stack golf analytics mobile app for tracking and visualizing player performance.</p>
+                    <ul className="responsibilities">
+                      <li>Partnered with the data engineer to shape MongoDB collections, indexes, and document layouts for player stats and session history.</li>
+                      <li>Picked up golf performance metrics like driving, approach, short game, and putting, and how they roll up into overall player scores.</li>
+                      <li>Built Go APIs that return nested JSON trees designed for easy parsing and binding on the Flutter client.</li>
+                      <li>Shipped the Flutter app with FLChart dashboards for performance breakdowns, score trends, and schedule views.</li>
+                    </ul>
+                    <div className="project-tags">
+                      <span className="tag">Go</span>
+                      <span className="tag">MongoDB</span>
+                      <span className="tag">Flutter</span>
+                      <span className="tag">FLChart</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className={`timeline-card ${expandedCards[3] ? 'expanded' : ''}`} onClick={() => toggleCard(3)}>
+                  {expandedCards[3] && (
                     <div className="timeline-cover">
                       <img src="/lim_cover.png" alt="Lingkar Inovasi Muda" />
                     </div>
@@ -291,9 +366,9 @@ function App() {
                       <p className="position">Software Engineer<br/>Freelance</p>
                       <p className="duration">May 2024 - Jul 2024</p>
                     </div>
-                    {!expandedCards[1] && <div className="expand-indicator">⌄</div>}
+                    {!expandedCards[3] && <div className="expand-indicator">⌄</div>}
                   </div>
-                  <div className={`timeline-details ${expandedCards[1] ? 'show' : ''}`}>
+                  <div className={`timeline-details ${expandedCards[3] ? 'show' : ''}`}>
                     <p className="description">Developed an installable Flutter-based Progressive Web App (PWA) for medicine reminders, integrated with Firebase Cloud Messaging (FCM) for real-time notification delivery.</p>
                     <ul className="responsibilities">
                       <li>Built responsive and reusable UI components in Flutter based on provided design specifications.</li>
@@ -318,8 +393,8 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className={`timeline-card ${expandedCards[2] ? 'expanded' : ''}`} onClick={() => toggleCard(2)}>
-                  {expandedCards[2] && (
+                <div className={`timeline-card ${expandedCards[4] ? 'expanded' : ''}`} onClick={() => toggleCard(4)}>
+                  {expandedCards[4] && (
                     <div className="timeline-cover">
                       <img src="/eratani_cover.png" alt="Eratani" />
                     </div>
@@ -331,9 +406,9 @@ function App() {
                       <p className="position">Android Developer<br/>Full-time</p>
                       <p className="duration">Oct 2022 - Jun 2024</p>
                     </div>
-                    {!expandedCards[2] && <div className="expand-indicator">⌄</div>}
+                    {!expandedCards[4] && <div className="expand-indicator">⌄</div>}
                   </div>
-                  <div className={`timeline-details ${expandedCards[2] ? 'show' : ''}`}>
+                  <div className={`timeline-details ${expandedCards[4] ? 'show' : ''}`}>
                     <p className="description">Developed and maintained internal Android applications used by farmers, kiosk merchants, and internal operational teams including Sales, Acquisition, Operations, Agronomists, and Supply Chain.</p>
                     <ul className="responsibilities">
                       <li>Built offline-first Android applications using pure Kotlin to support field operations in low- to no-signal environments.</li>
@@ -357,8 +432,8 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className={`timeline-card ${expandedCards[3] ? 'expanded' : ''}`} onClick={() => toggleCard(3)}>
-                  {expandedCards[3] && (
+                <div className={`timeline-card ${expandedCards[5] ? 'expanded' : ''}`} onClick={() => toggleCard(5)}>
+                  {expandedCards[5] && (
                     <div className="timeline-cover">
                       <img src="/barangbaku_cover.png" alt="BarangBaku" />
                     </div>
@@ -370,9 +445,9 @@ function App() {
                       <p className="position">Software Engineer<br/>Internship</p>
                       <p className="duration">May 2021 - Oct 2021</p>
                     </div>
-                    {!expandedCards[3] && <div className="expand-indicator">⌄</div>}
+                    {!expandedCards[5] && <div className="expand-indicator">⌄</div>}
                   </div>
-                  <div className={`timeline-details ${expandedCards[3] ? 'show' : ''}`}>
+                  <div className={`timeline-details ${expandedCards[5] ? 'show' : ''}`}>
                     <p className="description">Developed a mobile marketplace application for Android and iOS called BarangBaku Marketplace, enabling users to buy and sell raw and semi-raw goods.</p>
                     <ul className="responsibilities">
                       <li>Contributed to building the startup's MVP e-commerce platform from the ground up for Android and iOS.</li>
@@ -397,8 +472,8 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
-                <div className={`timeline-card ${expandedCards[4] ? 'expanded' : ''}`} onClick={() => toggleCard(4)}>
-                  {expandedCards[4] && (
+                <div className={`timeline-card ${expandedCards[6] ? 'expanded' : ''}`} onClick={() => toggleCard(6)}>
+                  {expandedCards[6] && (
                     <div className="timeline-cover">
                       <img src="/aces_cover.jpg" alt="ACES UMN" />
                     </div>
@@ -410,9 +485,9 @@ function App() {
                       <p className="position">Academic Tutor<br/>Contract</p>
                       <p className="duration">Dec 2019 - Dec 2020</p>
                     </div>
-                    {!expandedCards[4] && <div className="expand-indicator">⌄</div>}
+                    {!expandedCards[6] && <div className="expand-indicator">⌄</div>}
                   </div>
-                  <div className={`timeline-details ${expandedCards[4] ? 'show' : ''}`}>
+                  <div className={`timeline-details ${expandedCards[6] ? 'show' : ''}`}>
                     <p className="description">Held weekly tutoring sessions for fellow students based on academic and technical learning requests.</p>
                     <ul className="responsibilities">
                       <li>Taught Electronics and Robotics fundamentals, including basic circuit design and embedded systems concepts.</li>
