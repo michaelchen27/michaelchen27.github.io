@@ -182,11 +182,13 @@ function App() {
               <h3>Programming Languages</h3>
               <div className="skill-list">
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" className="skill-tag-icon" /> Kotlin</span>
-                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="skill-tag-icon" /> Java</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" className="skill-tag-icon" /> Swift</span>
-                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="skill-tag-icon" /> Python</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="skill-tag-icon" /> JavaScript</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" className="skill-tag-icon" /> TypeScript</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" className="skill-tag-icon" /> PHP</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" className="skill-tag-icon" /> Go</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="skill-tag-icon" /> Java</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="skill-tag-icon" /> Python</span>
               </div>
             </div>
             <div className="skill-category category-mobile">
@@ -202,6 +204,7 @@ function App() {
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" className="skill-tag-icon" /> Flutter</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="skill-tag-icon" /> React</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" className="skill-tag-icon" /> Laravel</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/livewire/livewire-original.svg" alt="Livewire" className="skill-tag-icon" /> Livewire</span>
               </div>
             </div>
             <div className="skill-category category-tools">
@@ -211,11 +214,13 @@ function App() {
               </div>
               <h3>Tools & Platforms</h3>
               <div className="skill-list">
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" className="skill-tag-icon" /> Android Studio</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg" alt="Xcode" className="skill-tag-icon" /> Xcode</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="skill-tag-icon" /> Git</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="skill-tag-icon" /> GitHub</span>
                 <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="Firebase" className="skill-tag-icon" /> Firebase</span>
-                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" className="skill-tag-icon" /> Android Studio</span>
-                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg" alt="Xcode" className="skill-tag-icon" /> Xcode</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" className="skill-tag-icon" /> Supabase</span>
+                <span className="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel" className="skill-tag-icon" /> Vercel</span>
               </div>
             </div>
           </div>
